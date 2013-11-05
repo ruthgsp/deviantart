@@ -95,6 +95,11 @@ class DeviantClient
     data = post 'stash/space'
     return data['available_space']
   end
+
+  def stash_count
+    data = post 'stash/delta'
+    return data['entries'].count
+  end
   
   def submit params
     option_keys = [:title, :artist_comments, :keywords, :stashid, :folder, :folderid]
